@@ -1,9 +1,33 @@
-@extends('layouts.app')
-@section('css')
-<link href="{{ asset('css/login.css') }}" rel="stylesheet">
-@endsection
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
 
-@section('content')
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
 
 <div class="page login-page">
     <div class="container d-flex align-items-center">
@@ -12,6 +36,7 @@
                 <!-- Logo & Information Panel-->
                 <div class="col-lg-6">
                     <div class="info d-flex align-items-center">
+                        
                         <img src="{{ asset('img/beikin.png') }}" alt="" class="img-fluid mx-auto" width="200">
                     </div>
                 </div>
@@ -54,8 +79,5 @@
         </div>
     </div>    
 </div>
-@endsection
-
-@section('scripts')
+<script src="{{ asset('js/main.js') }}" defer></script>
 <!-- <script src="{{ asset('js/jquery.validate.min.js') }}"></script> -->
-@endsection

@@ -122,10 +122,14 @@
                             </li>
                             <!-- Logout    -->
                             <li class="nav-item">
-                                <a href="login.html" class="nav-link logout">
+                                <a href="{{ route('logout') }}" class="nav-link logout" onclick="event.preventDefault();
+         document.getElementById('logout-form').submit();">
                                     <span class="d-none d-sm-inline">Logout</span>
                                     <i class="far fa-sign-out"></i>
                                 </a>
+                                <form id="logout-form" class="d-none" action="{{ url('/logout') }}" method="POST">
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -135,6 +139,7 @@
 
 
         <div class="page-content d-flex align-items-stretch">
+            @auth
             <!-- Side Navbar -->
             <nav class="side-navbar">
                 <!-- Sidebar Header-->
@@ -143,7 +148,9 @@
                         <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">                        
                     </div> -->
                     <div class="title">
+                        @auth
                         <h1 class="h4">{{ Auth::user()->name }}</h1>
+                        @endauth
                         <!-- <p>Web Designer</p> -->
                     </div>
                 </div>
@@ -151,44 +158,15 @@
                 <!-- <span class="heading">Main</span> -->
                 <ul class="list-unstyled">
                     <li>
-                        <a href="index.html">
+                        <a href="{{ route('clientes.index') }}">
                             <i class="fas fa-user-tie"></i>Clientes </a>
                     </li>
                 </ul>
             </nav>
+            @endauth
 
             <div class="content-inner">
-                <!-- Page Header-->
-                <header class="page-header">
-                    <div class="container-fluid">
-                        <h2 class="no-margin-bottom">Dashboard</h2>
-                    </div>
-                </header>
-                <!-- Dashboard Counts Section-->
-                <section class="dashboard-counts no-padding-bottom">
-                    <div class="container-fluid">
-                        <div class="row bg-white has-shadow">
-                            <!-- Item -->
-                            <div class="col-xl-3 col-sm-6">
-                                <div class="item d-flex align-items-center">
-                                    <div class="icon bg-violet">
-                                        <i class="icon-user"></i>
-                                    </div>
-                                    <div class="title">
-                                        <span>New
-                                            <br>Clients</span>
-                                        <div class="progress">
-                                            <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
-                                        </div>
-                                    </div>
-                                    <div class="number">
-                                        <strong>25</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                @yield('content')                
             </div>
         </div>
     </div>
