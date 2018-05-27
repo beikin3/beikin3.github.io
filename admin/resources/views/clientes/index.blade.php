@@ -1,40 +1,30 @@
 @extends('layouts.app') @section('content')
-<header class="page-header">
-    <div class="container-fluid d-flex">
-        <h2 class="no-margin-bottom">Clientes</h2>
-        <a href="" class="btn btn-primary ml-auto">Cadastrar</a>
-    </div>
-</header>
 <!-- Dashboard Counts Section-->
 <section class="dashboard-counts no-padding-bottom">
     <div class="container-fluid">
         <div class="row bg-white has-shadow">
-            <div class="col">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Cliente</th>
-                                <th>Email</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($clientes as $cliente)
-                            <tr>
-                                <td>{{ $cliente->nome }}</td>
-                                <td>{{ $cliente->email }}</td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                    </table>
-                </div>
+            <div class="col-12 text-right">
+                <a href="{{ route('clientes.create') }}" class="btn btn-primary mb-3">Novo</a>
             </div>
+
+            @foreach ($clientes as $cliente)
+            <div class="col">
+                <a href="{{ route('clientes.edit', $cliente->id) }}" class="statistic d-flex align-items-center has-shadow mb-3">
+                    <div class="icon bg-dark">
+                        <i class="fa fa-user-tie"></i>
+                    </div>
+                    <div class="text">
+                        {{ $cliente->nome }}
+                        <!-- <br>
+                        <small>Applications</small> -->
+                    </div>
+                </a>
+            </div>
+
+            @endforeach
+
         </div>
+    </div>
     </div>
 </section>
 @endsection

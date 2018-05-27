@@ -44,11 +44,9 @@
                 <div class="col-lg-6 bg-white">
                     <div class="form d-flex align-items-center">
                         <div class="content">
-                                <form method="POST" action="{{ route('login') }}" class="form-validate">
+                                <form method="POST" action="{{ route('login') }}" class="needs-validation">
                                 @csrf
                                 <div class="form-group">
-                                    <!-- <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material"> -->
-
                                     <input id="email" type="email" class="input-material {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
                                     required autofocus>
                                     @if ($errors->has('email'))

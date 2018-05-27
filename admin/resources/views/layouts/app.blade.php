@@ -45,7 +45,7 @@
                         <!-- Navbar Header-->
                         <div class="navbar-header">
                             <!-- Navbar Brand -->
-                            <a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                            <a href="{{ route('home') }}" class="navbar-brand d-none d-sm-inline-block">
                                 <div class="brand-text d-none d-lg-inline-block">
                                     <span>Beikin </span>
                                 </div>
@@ -157,9 +157,11 @@
                 <!-- Sidebar Navidation Menus-->
                 <!-- <span class="heading">Main</span> -->
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="{{ route('clientes.index') }}">
-                            <i class="fas fa-user-tie"></i>Clientes </a>
+                    <li class="{{ Request::is('home') ? 'active' : '' }}">
+                        <a href="{{ route('home') }}"><i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+                    <li class="{{ Request::is('clientes*') ? 'active' : '' }}">
+                        <a href="{{ route('clientes.index') }}"><i class="fas fa-user-tie"></i>Clientes</a>
                     </li>
                 </ul>
             </nav>

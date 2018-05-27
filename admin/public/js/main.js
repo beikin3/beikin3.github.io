@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 45:
+/***/ 38:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(46);
+module.exports = __webpack_require__(39);
 
 
 /***/ }),
 
-/***/ 46:
+/***/ 39:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
@@ -140,6 +140,20 @@ $(document).ready(function () {
     // Universal Form Validation
     // ------------------------------------------------------ //
 
+    // window.addEventListener('load', function() {
+    //   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    //   var forms = document.getElementsByClassName('needs-validation');
+    //   // Loop over them and prevent submission
+    //   var validation = Array.prototype.filter.call(forms, function(form) {
+    //     form.addEventListener('submit', function(event) {
+    //       if (form.checkValidity() === false) {
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //       }
+    //       form.classList.add('was-validated');
+    //     }, false);
+    //   });
+    // }, false);
     // $('.form-validate').each(function() {  
     //     $(this).validate({
     //         errorElement: "div",

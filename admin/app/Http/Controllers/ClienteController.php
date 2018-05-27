@@ -16,7 +16,7 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::all();
 
-        return view('clientes/index', compact('clientes'));
+        return view('clientes.index', compact('clientes'));
     }
 
     /**
@@ -26,7 +26,8 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        $cliente = new Cliente;
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
@@ -37,7 +38,13 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $cliente = Cliente::create($request->all());
+            return redirect()->route('clientes.edit', $cliente->id);
+        } catch (\Exception $e) {
+            return back()->withInput()->with(array('status' => 'danger', 'error' => $e->getMessage()));
+        }
+        
     }
 
     /**
@@ -59,7 +66,8 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        //
+        $cliente = Cliente::findOrFail($cliente->id);
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
@@ -71,7 +79,9 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        $cliente = Cliente::find($cliente->id);
+        $cliente->update($request->all());
+        return back()->withInput()->with(array('status' => 'success', 'msg' => 'salvo'));
     }
 
     /**
