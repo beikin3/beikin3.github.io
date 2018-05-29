@@ -108,35 +108,76 @@
                     <h1 class="my-4">Hospedagem</h1>
 
                     <div class="form-group-material">
-                            <input id="hospedagem" type="text" class="input-material {{ $errors->has('hospedagem') ? ' is-invalid' : '' }}" name="hospedagem" value="{{ old('hospedagem', $cliente->hospedagem) }}"> @if ($errors->has('hospedagem'))
-                            <span class="invalid-feedback">
-                                <strong>{{ $errors->first('hospedagem') }}</strong>
-                            </span>
-                            @endif
-                            <label for="name" class="label-material">URL</label>
-                        </div>
+                        <input id="hospedagem" type="text" class="input-material {{ $errors->has('hospedagem') ? ' is-invalid' : '' }}" name="hospedagem"
+                            value="{{ old('hospedagem', $cliente->hospedagem) }}"> @if ($errors->has('hospedagem'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('hospedagem') }}</strong>
+                        </span>
+                        @endif
+                        <label for="name" class="label-material">URL</label>
+                    </div>
 
                     <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group-material">
-                                    <input id="hospedagem_login" type="text" class="input-material {{ $errors->has('hospedagem_login') ? ' is-invalid' : '' }}"
-                                        name="hospedagem_login" value="{{ old('hospedagem_login', $cliente->hospedagem_login) }}"> @if ($errors->has('hospedagem_login'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('hospedagem_login') }}</strong>
-                                    </span>
-                                    @endif
-                                    <label for="name" class="label-material">Login/Senha</label>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="hospedagem_login" type="text" class="input-material {{ $errors->has('hospedagem_login') ? ' is-invalid' : '' }}"
+                                    name="hospedagem_login" value="{{ old('hospedagem_login', $cliente->hospedagem_login) }}"> @if ($errors->has('hospedagem_login'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('hospedagem_login') }}</strong>
+                                </span>
+                                @endif
+                                <label for="name" class="label-material">Login</label>
                             </div>
-                            <div class="col-md-2">
-                                    <input id="hospedagem_senha" type="text" class="input-material {{ $errors->has('hospedagem_senha') ? ' is-invalid' : '' }}"
-                                        name="hospedagem_senha" value="{{ old('hospedagem_senha', $cliente->hospedagem_senha) }}"> @if ($errors->has('hospedagem_senha'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('hospedagem_senha') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                        
+                        </div>
+                        <div class="col-md-2">
+                            <input id="hospedagem_senha" type="text" class="input-material {{ $errors->has('hospedagem_senha') ? ' is-invalid' : '' }}"
+                                name="hospedagem_senha" value="{{ old('hospedagem_senha', $cliente->hospedagem_senha) }}"> @if ($errors->has('hospedagem_senha'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('hospedagem_senha') }}</strong>
+                            </span>
+                            @endif
+                            <label for="name" class="label-material">Senha</label>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <h1 class="my-4">FTP</h1>
+
+                    <div class="form-group-material">
+                        <input id="ftp_host" type="text" class="input-material {{ $errors->has('ftp_host') ? ' is-invalid' : '' }}" name="ftp_host"
+                            value="{{ old('ftp_host', $cliente->ftp_host) }}"> @if ($errors->has('ftp_host'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('ftp_host') }}</strong>
+                        </span>
+                        @endif
+                        <label for="name" class="label-material">URL</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group-material">
+                                <input id="ftp_login" type="text" class="input-material {{ $errors->has('ftp_login') ? ' is-invalid' : '' }}"
+                                    name="ftp_login" value="{{ old('ftp_login', $cliente->ftp_login) }}"> @if ($errors->has('ftp_login'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('ftp_login') }}</strong>
+                                </span>
+                                @endif
+                                <label for="name" class="label-material">Login</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <input id="ftp_senha" type="text" class="input-material {{ $errors->has('ftp_senha') ? ' is-invalid' : '' }}"
+                                name="ftp_senha" value="{{ old('ftp_senha', $cliente->ftp_senha) }}"> @if ($errors->has('ftp_senha'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('ftp_senha') }}</strong>
+                            </span>
+                            @endif
+                            <label for="name" class="label-material">Senha</label>
+                        </div>
+
                     </div>
 
 
